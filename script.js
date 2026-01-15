@@ -38,12 +38,13 @@ function Library() {
     return null;
   };
   this.searchByName = function (name) {
+    let lst = []
     for (let book in this.library) {
-      if (this.library[book].name == name) {
-        return this.library[book];
+      if (this.library[book].name.toLowerCase().startsWith(name.toLowerCase())) {
+        lst.push(this.library[book]);
       }
     }
-    return null;
+    return lst;
   };
   this.viewBook = function (id) {
     for (let book in this.library) {
@@ -144,7 +145,10 @@ get_button.addEventListener("click", () => {
   if (by_id) {
     appendToDOM(by_id.id, by_id.name, by_id.status);
   } else if (by_name) {
-    appendToDOM(by_name.id, by_name.name, by_name.status);
+    for(let i in by_name)
+    {
+      appendToDOM(by_name[i].id, by_name[i].name, by_name[i].status);
+    }
   } else {
     appendToDOM("not found", "not found", "not found");
   }
