@@ -96,8 +96,6 @@ function appendToDOM(id, name, stat) {
   let td2 = document.createElement("td");
   let td3 = document.createElement("td");
   let but = document.createElement("button");
-  // but.style =
-  //   "width: 10px; height: 10px; border-radius: 50%; background-color: blue; border: none;";
     let tr = document.createElement("tr");
   td1.textContent = id;
   td2.textContent = name;
@@ -108,11 +106,9 @@ function appendToDOM(id, name, stat) {
   } else {
     td3.textContent = "unread";
   }
-  // td3.appendChild(but);
-  td3.style = "display: flex; justify-content: space-between; gap: 20px;";
-  td1.style = "border: 2px solid black";
-  td2.style = "border: 2px solid black";
-  td3.style = "border: 2px solid black";
+  td1.style = "border: 2px solid black; padding: 0px 5px;";
+  td2.style = "border: 2px solid black; padding: 0px 5px;";
+  td3.style = "border: 2px solid black; padding: 0px 5px;";
   tr.appendChild(td1);
   tr.appendChild(td2);
   tr.appendChild(td3);
